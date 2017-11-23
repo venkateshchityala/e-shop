@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block content%}
+<form class= "col s6 offset-s3" method="POST" action="/add/" >{% csrf_token %}
+
+	<h3>Submit Your Ad Here </h3>
+	<label>Region </label>
+	<select class="browser_default" name="region">
+	{% for re in reg %}
+	<option value="{{re.code}}">{{re}}</option>
+	{% endfor %}
+	</select>
+	<label>Tag</label>
+	<select class="browser_default" name="tag">
+	{% for tag in tags %}
+	<option value="{{tag.id}}">{{tag}}</option>
+	{% endfor %} 
+	</select>
+
+	<textarea id ="textareal" data-length = "2000" name="desc"></textarea>
+	<button class="waves-effect waves-light btn" type ="Submit">Submit</button>
+</form>
+{% endblock %}

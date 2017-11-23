@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+<h3>Welcome to my application</h3>
+{% if ads %}
+<ul>
+{% for a in ads %}
+<img src="http://i01.appmifile.com/webfile/globalimg/en/goods/hongmi3s/overall-intro-bg-3s.jpg" ; width="100px" ; height="150px";>
+<li>
+<a href="{{a.id}}">{{a.a_region}}
+{{a.a_tag}}</a>
+</li>
+</ul>
+{% endfor%}
+{% else %}
+<p>There are no ads </p>
+{% endif %}
+{% endblock %}
